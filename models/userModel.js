@@ -27,7 +27,7 @@ const delBook = async (id) => {
 
 const updateBook = async (id, book) => {
     const {judul, pengarang, penerbit} = book;
-    const query = `update buku set judul = ?, pengarang = ?, penerbit = ?where kode_buku = ?`;
+    const query = `update buku set judul = ?, pengarang = ?, penerbit = ? where kode_buku = ?`;
     const affected = await db.query(query, [judul, pengarang, penerbit, id]);
     
     return affected[0].affectedRows;
